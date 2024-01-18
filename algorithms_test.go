@@ -4,7 +4,6 @@ import (
 	algorithms "algorithms/numbers"
 	sorting "algorithms/sorting"
 	"fmt"
-	"math/rand"
 	"testing"
 )
 
@@ -16,20 +15,19 @@ func TestFindFactors(t *testing.T) {
 func TestInsertionSort(t *testing.T) {
 	lenList := 10
 
-	var input, next *sorting.LinkedList
-	input = &sorting.LinkedList{
-		Value: rand.Intn(10),
-	}
-
-	next = input
-	for i := 0; i < lenList-1; i++ {
-		next.Next = &sorting.LinkedList{
-			Value: rand.Intn(10),
-		}
-		next = next.Next
-	}
+	input := sorting.FillLinkedList(lenList)
 	fmt.Println(input)
 
 	input = sorting.InsertionSort(input)
+	fmt.Println(input)
+}
+
+func TestSelectionSort(t *testing.T) {
+	lenList := 10
+
+	input := sorting.FillLinkedList(lenList)
+	fmt.Println(input)
+
+	input = sorting.SelectionSort(input)
 	fmt.Println(input)
 }
