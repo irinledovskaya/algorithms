@@ -1,21 +1,22 @@
 package algorithms_test
 
 import (
-	algorithms "algorithms/numbers"
+	e "algorithms/entities"
+	numbers "algorithms/numbers"
 	sorting "algorithms/sorting"
 	"fmt"
 	"testing"
 )
 
 func TestFindFactors(t *testing.T) {
-	factors := algorithms.FindFactors(568)
+	factors := numbers.FindFactors(568)
 	fmt.Println(factors)
 }
 
 func TestInsertionSort(t *testing.T) {
 	lenList := 10
 
-	input := sorting.FillLinkedList(lenList)
+	input := e.FillLinkedList(lenList)
 	fmt.Println(input)
 
 	input = sorting.InsertionSort(input)
@@ -25,7 +26,7 @@ func TestInsertionSort(t *testing.T) {
 func TestSelectionSort(t *testing.T) {
 	lenList := 10
 
-	input := sorting.FillLinkedList(lenList)
+	input := e.FillLinkedList(lenList)
 	fmt.Println(input)
 
 	input = sorting.SelectionSort(input)

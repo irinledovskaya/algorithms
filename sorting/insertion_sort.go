@@ -1,12 +1,16 @@
 package sorting
 
+import (
+	e "algorithms/entities"
+)
+
 // сортировка вставкой для однонаправленного списка
-func InsertionSort(input *LinkedList) *LinkedList {
+func InsertionSort(input *e.LinkedList) *e.LinkedList {
 	if input == nil || input.Next == nil {
 		return input
 	}
 
-	sentinel := &LinkedList{}
+	sentinel := &e.LinkedList{}
 	for input != nil {
 		next := input
 		input = input.Next

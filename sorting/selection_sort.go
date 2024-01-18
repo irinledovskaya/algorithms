@@ -1,12 +1,16 @@
 package sorting
 
+import (
+	e "algorithms/entities"
+)
+
 // сортировка выбором для однонапрвленного списка
-func SelectionSort(input *LinkedList) *LinkedList {
+func SelectionSort(input *e.LinkedList) *e.LinkedList {
 	if input == nil || input.Next == nil {
 		return input
 	}
 
-	ferst := &LinkedList{}
+	ferst := &e.LinkedList{}
 	for input.Next != nil {
 		maxAfterMe := input
 		maxVal := maxAfterMe.Next.Value
