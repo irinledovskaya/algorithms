@@ -32,3 +32,30 @@ func TestSelectionSort(t *testing.T) {
 	input = sorting.SelectionSort(input)
 	fmt.Println(input)
 }
+
+func TestStackPush(t *testing.T) {
+	stack := e.NewStack()
+	stack.Push(5)
+	stack.Push(10)
+	stack.Push(0)
+	fmt.Println(stack)
+}
+
+func TestStackPop(t *testing.T) {
+	stack := e.NewStack()
+	stack.Push(5)
+	stack.Push(10)
+	stack.Push(0)
+	fmt.Println(stack)
+	var err error
+	var val int
+	for err == nil {
+		val, err = stack.Pop()
+		if err != nil {
+			fmt.Println(err)
+		} else {
+			fmt.Println(val)
+		}
+	}
+
+}

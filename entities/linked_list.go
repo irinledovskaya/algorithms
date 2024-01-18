@@ -15,12 +15,14 @@ func (l *LinkedList) String() string {
 		return ""
 	}
 	if l.Next == nil {
-		return fmt.Sprintf("%d", l.Value)
+		return fmt.Sprintf("{%d}", l.Value)
 	}
 
 	s := "{"
+	s += fmt.Sprintf("%d", l.Value)
+	l = l.Next
 	for {
-		s += fmt.Sprintf("%d,", l.Value)
+		s += fmt.Sprintf(",%d", l.Value)
 		if l.Next == nil {
 			break
 		}
