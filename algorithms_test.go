@@ -57,5 +57,30 @@ func TestStackPop(t *testing.T) {
 			fmt.Println(val)
 		}
 	}
+}
 
+func TestQueueEnqueue(t *testing.T) {
+	queue := e.NewQueue()
+	queue.Enqueue(5)
+	queue.Enqueue(10)
+	queue.Enqueue(0)
+	fmt.Println(queue)
+}
+
+func TestQueueDequeue(t *testing.T) {
+	queue := e.NewQueue()
+	queue.Enqueue(5)
+	queue.Enqueue(10)
+	queue.Enqueue(0)
+	fmt.Println(queue)
+	var err error
+	var val int
+	for err == nil {
+		val, err = queue.Dequeue()
+		if err != nil {
+			fmt.Println(err)
+		} else {
+			fmt.Println(val)
+		}
+	}
 }
