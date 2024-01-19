@@ -5,7 +5,7 @@ import (
 )
 
 // сортировка вставкой для однонаправленного списка
-func InsertionSort(input *e.LinkedList) *e.LinkedList {
+func LLInsertionSort(input *e.LinkedList) *e.LinkedList {
 	if input == nil || input.Next == nil {
 		return input
 	}
@@ -22,4 +22,15 @@ func InsertionSort(input *e.LinkedList) *e.LinkedList {
 		afterMe.Next = next
 	}
 	return sentinel.Next
+}
+
+func SliceInsertionSort(s []int) []int {
+	for i := range s {
+		for j := 0; j < i; j++ {
+			if s[j] > s[i] {
+				s[j], s[i] = s[i], s[j]
+			}
+		}
+	}
+	return s
 }
