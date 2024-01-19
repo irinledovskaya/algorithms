@@ -5,7 +5,6 @@ import (
 	numbers "algorithms/numbers"
 	sorting "algorithms/sorting"
 	"fmt"
-	"math/rand"
 	"testing"
 )
 
@@ -84,15 +83,4 @@ func TestQueueDequeue(t *testing.T) {
 			fmt.Println(val)
 		}
 	}
-}
-
-func TestSliceInsertionSort(t *testing.T) {
-	sLen := 10
-	s := make([]int, sLen)
-	for i := range s {
-		s[i] = rand.Intn(100)
-	}
-	fmt.Println(s)
-	s = sorting.SliceInsertionSort(s)
-	fmt.Println(s)
 }
